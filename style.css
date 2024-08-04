@@ -1,0 +1,12 @@
+.result{
+    display: flex;
+    flex-direction: row;
+}
+#Input{
+    width: 500px;
+    height: 150px;
+}
+#Output{
+    width: 500px;
+    height: 150px;
+}
