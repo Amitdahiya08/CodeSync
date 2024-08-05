@@ -45,14 +45,11 @@ runButton.addEventListener("click", () => {
         language_id: languageId,
         stdin: input
     };
-
-    console.log("Submission Data:", submissionData);
-
     fetch("https://judge0-ce.p.rapidapi.com/submissions", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "X-RapidAPI-Key": "8b48dfb2d5mshc8d04921d946ebbp1688aajsn71c11bdb6e70",
+            "X-RapidAPI-Key": "8b48dfb2d5mshc8d04921d946ebbp1688aajsn71c11bdb6e70", //add Your API Key
             "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com"
         },
         body: JSON.stringify(submissionData)
@@ -64,7 +61,6 @@ runButton.addEventListener("click", () => {
         return response.json();
     })
     .then(data => {
-        // console.log("Submission Response Data:", data);
         let token = data.token;
         if (!token) {
             throw new Error('Failed to get a valid token');
@@ -87,7 +83,6 @@ runButton.addEventListener("click", () => {
         return response.json();
     })
     .then(result => {
-        // console.log("Result Output:", result.stdout);
         OutputBox.value=result.stdout;
     })
     .catch(error => {
